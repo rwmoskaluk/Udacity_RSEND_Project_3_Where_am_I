@@ -1,0 +1,5 @@
+/catkin_ws/.catkin_workspace
+/catkin_ws/build
+.idea/
+/catkin_ws/src/pgm_map_creator/
+/catkin_ws/devel/
