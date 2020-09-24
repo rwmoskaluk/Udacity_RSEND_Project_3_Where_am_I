@@ -1,0 +1,5 @@
+<launch>
+	<node name="map_server"></node>
+	<node name="amcl"></node>
+	<node name="move_base"></node>
+</launch>
