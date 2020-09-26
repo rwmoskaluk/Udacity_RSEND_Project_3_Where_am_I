@@ -6,14 +6,38 @@
 	<!-- AMCL Node -->
 	<node name="amcl" pkg="amcl" type="amcl" output="screen">
 		<remap from="scan" to="/scan"/>
+
+		<!-- AMCL Parameters -->
+
+		<param name="min_particles" value="100"/>
+		<param name="max_particles" value="4000"/>
+
+		<param name="initial_pose_x" value="3"/>
+		<param name="initial_pose_y" value="2"/>
+		<param name="initial_pose_a" value="0.5"/>
+		
+		<param name="update_min_d" value="0.1"/>
+		<param name="update_min_a" value="M_PI/6.0"/>
+		<param name="resample_interval" value="2"/>
+
+
+		<!-- Laser Parameters -->
+
+		<param name="laser_min_range" value="-1.0"/>
+		<param name="laser_max_range" value="10.0"/>
+		<param name="laser_max_beams" value="30"/>
+
+		<param name="laser_z_hit" value="0.94"/>
+		<param name="laser_z_rand" value="0.06"/>
+
+		<param name="laser_model_type" value="likelihood_field"/>
+
+		<!-- Odom Parameters -->
 		<param name="odom_frame_id" value="odom"/>
 		<param name="odom_model_type" value="diff-corrected"/>
 		<param name="base_frame_id" value="robot_footprint"/>
 		<param name="global_frame_id" value="map"/>
 
-		<!-- Optional initial pose estimate -->
-		<param name="initial_pose_x" value="0"/>
-		<param name="initial_pose_y" value="0"/>
 	</node>
 
 	<!-- Move Base Node -->

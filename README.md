@@ -63,3 +63,22 @@ Call Stack (most recent call first):
 ```
 	sudo apt-get install ros-melodic-move-base-msgs
 ```
+
+
+```
+static double amcl::AMCLLaser::LikelihoodFieldModel(amcl::AMCLLaserData*, pf_sample_set_t*): Assertion `pz <= 1.0' failed.
+
+```
+
+```$xslt
+When using either model for the laser scanner the weights need to add up to 1 otherwise this error is thrown
+https://github.com/ros-planning/navigation/issues/824
+```
+
+Was initially getting update loop messages about being close to the expected update time, tuned down the frequency of the updates so that this time became larger.
+
+Initially these were defaulted to 2.0Hz
+```$xslt
+    update_frequency: 0.5
+    publish_frequency: 0.5
+```
