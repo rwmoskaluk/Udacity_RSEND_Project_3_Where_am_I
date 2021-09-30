@@ -15,13 +15,34 @@ catkin_make
 source devel/setup.bash
 roslaunch my_robot world.launch
 ```
+### Option #1 2D nav goal in rviz
 In a different terminal launch the diy_acml package
 ```
-cd /src/diy_amcl/
+cd catkin_ws/
+source devel/setup.bash
 roslaunch diy_amcl amcl.launch
 ```
 
+In rviz then command the robot with 2d nav goals
 
+### Option #2 Teleop control package
+
+Using the Telop package one can drive the robot around instead of placing 2d nav goals.
+
+#### Installing ROS Teleop Package
+```
+cd catkin_ws/src
+git clone https://github.com/ros-teleop/teleop_twist_keyboard
+cd ..
+catkin_make
+source devel/setup.bash
+```
+#### Running the Teleop package
+```
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+```
+
+## Visualizing the environment
 Add visualizations in rviz after launching
 
 `Switch frame to odom`
@@ -50,6 +71,7 @@ Select Map
 
 # Example running:
 
+<img src="pictures/Example_Localization.gif?raw=true" width="720px">
 
 
 # Notes:
