@@ -1,11 +1,63 @@
 # Udacity_RSEND_Project_3_Where_am_I
 
+[image1]: ./pictures/libprotobuf_error_fix.png "Libprotobuf Error Fix"
+[image2]: ./pictures/rviz_fix_frame.png "Rviz fixed frame"
+[image3]: ./pictures/rviz_robotmodel.png "Rviz robotmodel"
+[image4]: ./pictures/rviz_map.png "Rviz map"
+[image5]: ./pictures/rviz_localization_map.png "Rviz localization map"
+
+
+
+# How to run:
+Navigate to /catkin_ws/ directory
+```
+catkin_make
+source devel/setup.bash
+roslaunch my_robot world.launch
+```
+In a different terminal launch the diy_acml package
+```
+cd /src/diy_amcl/
+roslaunch diy_amcl amcl.launch
+```
+
+
+Add visualizations in rviz after launching
+
+`Switch frame to odom`
+![alt text][image2]
+
+
+<br>Add in the Robot</br>
+```
+Select Add
+Select RobotModel
+```
+![alt text][image3]
+
+<br>Add in the map</br>
+```
+Select Add
+Select Map
+```
+![alt text][image4]
+
+<br>Add a 2d nav goal</br>
+
+![alt text][image5]
+
+
+
+# Example running:
+
 
 
 # Notes:
 
 
 For Ubuntu 18.04 LTS ROS Melodic when using pgm_map_creator package, utilize the branch (dudasdavid:libprotobuf-fix) that fixes the libprotobuf compiling problem along with allowing pgm_map_creator to run in Melodic.  As of 9/24/2020 the branch has not merged with master yet.  Changes shown below.
+
+![alt text][image1]
 
 
 
