@@ -5,6 +5,8 @@
 [image3]: ./pictures/rviz_robotmodel.png "Rviz robotmodel"
 [image4]: ./pictures/rviz_map.png "Rviz map"
 [image5]: ./pictures/rviz_localization_map.png "Rviz localization map"
+[image6]: ./pictures/Robot_screenshot.png "Robot screenshot Gazebo"
+[image7]: ./pictures/Rviz_Localization_screenshot.png "Localization screenshot rviz"
 
 
 
@@ -72,6 +74,10 @@ Select Map
 # Example running:
 
 <img src="pictures/Example_Localization.gif?raw=true" width="720px">
+<img src="pictures/Example_2_localization.gif?raw=true" width="720px">
+
+![alt text][image6]
+![alt text][image7]
 
 
 # Notes:
