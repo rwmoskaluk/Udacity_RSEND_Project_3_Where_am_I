@@ -6,7 +6,9 @@
 [image4]: ./pictures/rviz_map.png "Rviz map"
 [image5]: ./pictures/rviz_localization_map.png "Rviz localization map"
 [image6]: ./pictures/Robot_screenshot.png "Robot screenshot Gazebo"
-[image7]: ./pictures/Rviz_Localization_screenshot.png "Localization screenshot rviz"
+[image7]: ./pictures/Localization_start.png "Localization screenshot rviz start"
+[image8]: ./pictures/Localization_end.png "Localization screenshot rviz end"
+
 
 
 
@@ -29,7 +31,7 @@ In rviz then command the robot with 2d nav goals
 
 ### Option #2 Teleop control package
 
-Using the Telop package one can drive the robot around instead of placing 2d nav goals.
+Using the Teleop package one can drive the robot around instead of placing 2d nav goals.
 
 #### Installing ROS Teleop Package
 ```
@@ -73,17 +75,24 @@ Select Map
 
 # Example running:
 
-<img src="pictures/Example_Localization.gif?raw=true" width="720px">
-<img src="pictures/Example_2_localization.gif?raw=true" width="720px">
+<img src="pictures/Localization_start.gif?raw=true" width="720px">
+<img src="pictures/Localization_end.gif?raw=true" width="720px">
 
 ![alt text][image6]
 ![alt text][image7]
+![alt text][image8]
 
 
+
+# Learnings:
+
+When configuring the ACML package make sure to take notice of what the initial pose (`initial_pose_x`, `initial_pose_y`, `initial_pose_a`) values are set to.  This can have a drastic outcome for localization with the map.
+
+Another note, the `odom_alpha` values can be lower to help speed up the localization time since we are just in simulation there won't be real noise in their readings.
 # Notes:
 
 
-For Ubuntu 18.04 LTS ROS Melodic when using pgm_map_creator package, utilize the branch (dudasdavid:libprotobuf-fix) that fixes the libprotobuf compiling problem along with allowing pgm_map_creator to run in Melodic.  As of 9/24/2020 the branch has not merged with master yet.  Changes shown below.
+For Ubuntu 18.04 LTS ROS Melodic when using pgm_map_creator package, utilize the branch (`dudasdavid:libprotobuf-fix`) that fixes the libprotobuf compiling problem along with allowing pgm_map_creator to run in Melodic.  As of 9/24/2020 the branch has not merged with master yet.  Changes shown below.
 
 ![alt text][image1]
 
